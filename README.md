@@ -1,6 +1,6 @@
 #Python_Excel2Txt
 
- 公司运营给的Excel表格，用里面的渠道标签来打包Android的包，如果手动一个复制粘贴，需要不少时间。
+ 公司运营给的Excel表格，用里面的渠道标签来打包Android的包，如果手动一个个复制粘贴，需要不少时间。
 
 1. 而且公司规定渠道标签必须是7位的，这表格里面有5位的，5位的渠道标签后面补0来满足7位。
-2. 由于Android的本身的原因，AndroidManifest.xml文件里面写入渠道号，如果是纯数字的话，将metadata包装成bundle的时候，使用getString（）获取的会是null，现在的办法是在7位渠道好前面加2个字母字符，读的时候去掉前面的2个字母字符这种方式。
+2. 由于Android的本身的原因，AndroidManifest.xml文件里面写入渠道号，如果是纯数字的话，将metadata包装成bundle的时候，使用getString（）获取的会是null，现在的办法是在7位渠道号前面加2个英文字母字符，读的时候去掉前面的2个英文字母字符。
