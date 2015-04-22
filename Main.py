@@ -46,11 +46,15 @@ def excel2Txt():
                     jdIDStr = str(jdIDInt)
 
             else:
-                jdIDStr = jdIDFloat
+                jdIDStr = jdIDFloat.strip()
 
             jdName = mSheet.row_values(rx)[2]
             # print(str(jdIDStr) + '-->' + jdName)
-            file_object.write('<channel value=“' + 'zr' + jdIDStr + '” />     <!-- ' + jdName + ' -->' + '\n')
+            # 考虑渠道标签：无
+            if jdIDStr == "无" :
+                print('渠道id：无 --》渠道名称：'  + jdName)
+            else :
+                file_object.write('<channel value=“' + 'zr' + jdIDStr + '” />     <!-- ' + jdName + ' -->' + '\n')
 
 
         file_object.close()
